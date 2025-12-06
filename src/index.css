@@ -4,4 +4,9 @@
   --color-primary: #172436;
   --color-secondary: #52637a;
   --color-accent: #d19847;
+
+  --font-body: "Playfair Display", serif;
+}
+body{
+    font-family: var(--font-body);
 }
