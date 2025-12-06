@@ -1,4 +1,4 @@
-import Links from "./components/Links";
+import Links from "./components/Link";
 
 function App() {
   return <Links text="View Full Calendar" />;
