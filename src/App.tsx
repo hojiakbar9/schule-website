@@ -1,7 +1,8 @@
+import Hero from "./components/Hero";
 import Links from "./components/Link";
 
 function App() {
-  return <Links text="View Full Calendar" />;
+  return <Hero />;
 }
 
 export default App;
