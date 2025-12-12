@@ -55,8 +55,8 @@ const NavBar = () => {
         <button
           className={`rounded px-6 py-2 font-semibold transition-all ${
             isScrolled
-              ? "bg-primary text-white hover:bg-secondary"
-              : "bg-primary text-white hover:bg-secondary cursor-pointer"
+              ? "bg-accent text-white hover:bg-secondary"
+              : "bg-accent text-white hover:bg-secondary cursor-pointer"
           }`}
         >
           Registrieren
