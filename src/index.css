@@ -6,6 +6,7 @@
   --color-accent: #d19847;
 
   --font-body: "Playfair Display", serif;
+  --font-accent: "Inter", sans-serif;
    /* Fade in and scale animation */
   --animate-fade-in-scale: fade-in-scale 0.6s ease-out forwards;
 
