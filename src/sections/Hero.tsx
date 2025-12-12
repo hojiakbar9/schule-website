@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#learn-more"
-              className="bg-accent text-primary font-semibold px-6 py-3 rounded-lg text-center transition transform hover:scale-105 hover:bg-accent/90 animate-[var(--animate-slide-in-up)]"
+              className="bg-accent text-white font-semibold px-6 py-3 rounded-lg text-center transition transform hover:scale-105 hover:bg-accent/90 animate-slide-in-up"
             >
               Mehr erfahren
             </a>
