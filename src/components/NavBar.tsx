@@ -26,7 +26,7 @@ const NavBar = () => {
   return (
     <div
       className={`fixed z-20 w-full pt-4 pb-4 flex items-center justify-between transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        isScrolled ? "bg-primary/95 shadow-md" : "bg-transparent"
       }`}
     >
       {/* Logo */}
@@ -42,9 +42,9 @@ const NavBar = () => {
           {menuItems.map((item, index) => (
             <li
               key={index}
-              className={`cursor-pointer transition-colors font-medium ${
+              className={`cursor-pointer transition-colors font-accent font-medium ${
                 isScrolled
-                  ? "text-gray-800 hover:text-secondary"
+                  ? "text-white hover:text-secondary"
                   : "text-white hover:text-secondary"
               }`}
             >
@@ -52,13 +52,7 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
-        <button
-          className={`rounded px-6 py-2 font-semibold transition-all ${
-            isScrolled
-              ? "bg-accent text-white hover:bg-secondary"
-              : "bg-accent text-white hover:bg-secondary cursor-pointer"
-          }`}
-        >
+        <button className="rounded px-6 py-2 font-semibold transition-all bg-accent text-white hover:bg-secondary cursor-pointer">
           Registrieren
         </button>
       </nav>
@@ -66,9 +60,7 @@ const NavBar = () => {
       {/* Mobile Burger Menu */}
       <div className="relative md:hidden">
         <button
-          className={`p-2 text-3xl mr-4 cursor-pointer transition-colors ${
-            isScrolled ? "text-gray-800" : "text-white"
-          }`}
+          className="p-2 text-3xl mr-4 cursor-pointer transition-colors text-white "
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <IoClose /> : <CiMenuBurger />}
@@ -76,7 +68,7 @@ const NavBar = () => {
 
         {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="font-sans absolute text-xl capitalize right-0 mt-4 w-screen bg-transparent backdrop-blur-md rounded-lg p-4 shadow-lg">
+          <div className="bg-primary/95 flex flex-col items-center text-center font-accent absolute text-xl capitalize right-0 mt-5 w-screen  backdrop-blur-md  p-4 shadow-lg">
             <ul className="space-y-4 text-white mb-4 p-4">
               {menuItems.map((item, index) => (
                 <li
@@ -87,7 +79,7 @@ const NavBar = () => {
                 </li>
               ))}
             </ul>
-            <button className="bg-primary cursor-pointer text-white w-full mt-4 rounded p-2 font-semibold hover:bg-secondary transition-colors">
+            <button className="bg-accent cursor-pointer text-white w-full mt-4 rounded p-2 font-semibold hover:bg-secondary transition-colors">
               Registrieren
             </button>
           </div>
