@@ -42,11 +42,7 @@ const NavBar = () => {
           {menuItems.map((item, index) => (
             <li
               key={index}
-              className={`cursor-pointer transition-colors font-accent font-medium ${
-                isScrolled
-                  ? "text-white hover:text-secondary"
-                  : "text-white hover:text-secondary"
-              }`}
+              className="cursor-pointer transition-colors font-accent font-medium text-white hover:text-secondary"
             >
               {item}
             </li>
