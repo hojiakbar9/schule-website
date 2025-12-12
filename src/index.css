@@ -4,7 +4,9 @@
   --color-primary: #172436;
   --color-secondary: #52637a;
   --color-accent: #d19847;
+  --color-background: #fbfaf8;
 
+  --font-arabic: "Amiri Quran", serif;
   --font-body: "Playfair Display", serif;
   --font-accent: "Inter", sans-serif;
    /* Fade in and scale animation */
