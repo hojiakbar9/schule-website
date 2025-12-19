@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
-
+import logo from "../assets/mm-logo.png";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,7 +44,7 @@ const NavBar = () => {
         <a href="#" className="flex-shrink-0 z-50">
           <img
             className="h-12 w-auto object-contain"
-            src="src/assets/mm-logo.png"
+            src={logo}
             alt="Marburger Moschee Logo"
           />
         </a>

@@ -1,6 +1,6 @@
 import ProgramCards from "../components/ProgramCards";
 import { motion, type Variants } from "framer-motion";
-
+import students_in_the_classroom from "../assets/bright_classroom_with_engaged_students.png";
 const Programs = () => {
   // Content Data - clearly defined here for easy editing
   const programsData = [
@@ -57,7 +57,7 @@ const Programs = () => {
             <div className="relative lg:ml-8 rounded-2xl overflow-hidden shadow-2xl">
               <img
                 // Fixed path slashes for cross-platform compatibility
-                src="src/assets/bright_classroom_with_engaged_students.png"
+                src={students_in_the_classroom}
                 alt="Schüler im Unterricht"
                 className="w-full h-auto object-cover aspect-[4/3]"
               />

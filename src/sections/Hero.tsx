@@ -1,5 +1,5 @@
 import { motion, type Variants } from "framer-motion";
-
+import background from "../assets/quran-background.jpg";
 const Hero = () => {
   // Animation Variants
   const textVariants: Variants = {
@@ -32,7 +32,7 @@ const Hero = () => {
       >
         <img
           className="w-full h-full object-cover"
-          src="src/assets/quran-background.jpg"
+          src={background}
           alt="Hero background"
         />
         {/* Dark Overlay for readability */}

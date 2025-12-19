@@ -1,6 +1,14 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 
+// 1. IMPORT YOUR IMAGES HERE
+// Make sure these filenames match exactly what is in your folder
+import img1 from "../assets/gallery_1.jpg";
+import img2 from "../assets/gallery_2.jpg";
+import img3 from "../assets/gallery_3.jpg";
+import img4 from "../assets/gallery_4.jpg";
+import img5 from "../assets/gallery_5.jpg"; // Fixed "asssets" typo here
+
 // Define the shape of your image data
 interface GalleryImage {
   id: number;
@@ -8,13 +16,13 @@ interface GalleryImage {
   alt: string;
 }
 
-// Updated to .jpg extension
+// 2. USE THE VARIABLES IN THE ARRAY
 const galleryImages: GalleryImage[] = [
-  { id: 1, src: "src/assets/gallery_1.jpg", alt: "Students collaborating" },
-  { id: 2, src: "src/assets/gallery_2.jpg", alt: "Science lab experiment" },
-  { id: 3, src: "src/assets/gallery_3.jpg", alt: "Sports day event" },
-  { id: 4, src: "src/assets/gallery_4.jpg", alt: "Art class project" },
-  { id: 5, src: "src/assets/gallery_5.jpg", alt: "Graduation ceremony" },
+  { id: 1, src: img1, alt: "Students collaborating" },
+  { id: 2, src: img2, alt: "Science lab experiment" },
+  { id: 3, src: img3, alt: "Sports day event" },
+  { id: 4, src: img4, alt: "Art class project" },
+  { id: 5, src: img5, alt: "Graduation ceremony" },
 ];
 
 const Gallery = () => {
@@ -25,6 +33,7 @@ const Gallery = () => {
 
   const [isPaused, setIsPaused] = useState(false);
 
+  // We duplicate the array to create the "infinite" scroll loop effect
   const duplicatedImages = [...galleryImages, ...galleryImages];
 
   useEffect(() => {
@@ -38,6 +47,7 @@ const Gallery = () => {
       if (!isPaused && window.innerWidth >= 768) {
         scrollContainer.scrollLeft += 1;
 
+        // Reset scroll position when we reach halfway (the end of the first set of images)
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0;
         }
@@ -51,7 +61,7 @@ const Gallery = () => {
   }, [isPaused]);
 
   // Animation Variants
-  const textVariant = {
+  const textVariant: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
@@ -76,7 +86,7 @@ const Gallery = () => {
   return (
     <section className="py-24 bg-gray-50 overflow-hidden" ref={ref}>
       <div className="container mx-auto px-4 md:px-6">
-        {/* Header Section: Centered, no paragraph */}
+        {/* Header Section */}
         <div className="mb-12 md:mb-16 text-center">
           <motion.div
             initial="hidden"
@@ -84,10 +94,10 @@ const Gallery = () => {
             variants={textVariant}
           >
             <span className="text-accent font-bold tracking-widest text-sm uppercase mb-2 block">
-              Gallerie
+              Galerie
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-primary">
-              Das Leben in der <br className="hidden" /> Schule
+              Einblicke in den <br className="hidden md:block" /> Schulalltag
             </h2>
           </motion.div>
         </div>
@@ -110,6 +120,7 @@ const Gallery = () => {
         >
           {duplicatedImages.map((image, index) => (
             <motion.div
+              // Use a unique key combining ID and index because of duplication
               key={`${image.id}-${index}`}
               className="shrink-0 w-full md:w-[400px]"
               variants={cardVariant}
