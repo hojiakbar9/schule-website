@@ -31,7 +31,7 @@ const NavBar = () => {
     >
       {/* Logo */}
       <img
-        className="w-[120px] ml-7 lg:ml-12 object-contain cursor-pointer"
+        className="w-[120px] ml-7 mr-8 lg:ml-12 object-contain cursor-pointer"
         src="src/assets/mm-logo.png"
         alt="logo"
       />
