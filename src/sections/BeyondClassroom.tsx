@@ -12,33 +12,33 @@ import {
 const activities = [
   {
     id: 1,
-    title: "Spiritual Foundation",
+    title: "Spirituelles Fundament",
     description:
-      "We nurture the soul through daily prayers, Adhkar sessions, and practical Islamic etiquette, ensuring students grow with a strong connection to their Creator.",
+      "Wir pflegen die Seele durch tägliche Gebete, Adhkar-Sitzungen und praktische islamische Etikette, damit die Schüler eine starke Verbindung zu ihrem Schöpfer aufbauen.",
     icon: <FaMosque className="w-8 h-8" />,
     color: "bg-primary", // Navy
   },
   {
     id: 2,
-    title: "Community & Family",
+    title: "Gemeinschaft & Familie",
     description:
-      "Education is a family journey. We host regular social gatherings where parents and children bond, strengthening the ties that make our community unique.",
+      "Bildung ist eine Reise für die ganze Familie. Wir veranstalten regelmäßige Treffen, bei denen Eltern und Kinder zusammenkommen und die Bande stärken, die unsere Gemeinschaft einzigartig machen.",
     icon: <FaUsers className="w-8 h-8" />,
     color: "bg-secondary", // Slate
   },
   {
     id: 3,
-    title: "Camps & Recreation",
+    title: "Freizeit & Camps",
     description:
-      "From summer camps to weekend excursions, we believe in learning through adventure. These activities build character, resilience, and lifelong friendships.",
+      "Von Sommercamps bis zu Wochenendausflügen – wir glauben an Lernen durch Abenteuer. Diese Aktivitäten stärken Charakter, Resilienz und lebenslange Freundschaften.",
     icon: <FaTree className="w-8 h-8" />,
     color: "bg-accent", // Gold
   },
   {
     id: 4,
-    title: "Quran Competitions",
+    title: "Quran-Wettbewerbe",
     description:
-      "Excellence is encouraged through friendly competition. Our annual Quran and Islamic knowledge contests inspire students to strive for their best.",
+      "Excellenz wird durch freundschaftlichen Wettbewerb gefördert. Unsere jährlichen Quran- und Wissenswettbewerbe inspirieren Schüler dazu, ihr Bestes zu geben.",
     icon: <FaBookOpen className="w-8 h-8" />,
     color: "bg-primary", // Navy
   },
@@ -64,7 +64,7 @@ const BeyondClassroom = () => {
   };
 
   return (
-    <section className="py-24 bg-white">
+    <section id="life" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -75,15 +75,15 @@ const BeyondClassroom = () => {
             variants={fadeInUp}
           >
             <span className="text-accent font-bold tracking-widest text-sm uppercase mb-2 block">
-              Student Life
+              Schulleben
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-              Beyond the Classroom
+              Über den Unterricht hinaus
             </h2>
             <p className="text-secondary text-lg leading-relaxed">
-              We believe education extends far beyond textbooks. Our holistic
-              approach integrates faith, fun, and community into the daily lives
-              of our students.
+              Wir glauben, dass Bildung weit über Schulbücher hinausgeht. Unser
+              ganzheitlicher Ansatz integriert Glauben, Freude und Gemeinschaft
+              in den Alltag unserer Schüler.
             </p>
           </motion.div>
         </div>
@@ -154,8 +154,7 @@ const BeyondClassroom = () => {
 
               {/* English Translation */}
               <p className="text-secondary text-lg md:text-xl italic mb-3 font-medium">
-                "The best of people are those who are most beneficial to
-                people."
+                "Die besten Menschen sind jene, die anderen am meisten nützen."
               </p>
             </div>
           </div>

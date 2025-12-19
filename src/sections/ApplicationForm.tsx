@@ -11,7 +11,7 @@ import {
 
 const ApplicationForm = () => {
   // Simple state to handle form focus for styling
-  const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [focusedField, setFocusedField] = useState(null);
 
   // Animation Variants
   const fadeInUp = {
@@ -40,22 +40,23 @@ const ApplicationForm = () => {
             variants={fadeInUp}
           >
             <span className="text-accent font-bold tracking-widest text-sm uppercase mb-4 block">
-              Start Your Journey
+              Starten Sie Ihre Reise
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Ready to Join Our Community?
+              Bereit, Teil unserer Gemeinschaft zu werden?
             </h2>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              Take the first step towards an education that nurtures both the
-              mind and the soul. Fill out this initial form, and our admissions
-              team will reach out to schedule your screening call.
+            <p className="font-accent text-gray-300 text-lg mb-8 leading-relaxed">
+              Machen Sie den ersten Schritt zu einer Bildung, die Herz und
+              Verstand fördert. Füllen Sie dieses Formular aus, und unser
+              Aufnahmeteam wird sich bei Ihnen melden, um ein Kennenlerngespräch
+              zu vereinbaren.
             </p>
 
             {/* Quick Contact Info */}
             <div className="space-y-4 border-t border-white/10 pt-8">
               <div className="flex items-center text-gray-300">
                 <FaPhone className="text-accent mr-4" />
-                <span>+49 6421 123456 (Admissions Office)</span>
+                <span>+49 6421 123456 (Sekretariat)</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <FaEnvelope className="text-accent mr-4" />
@@ -77,7 +78,7 @@ const ApplicationForm = () => {
                 {/* Parent Name */}
                 <div className="col-span-2 md:col-span-1">
                   <label className="block text-sm font-bold text-primary mb-2">
-                    Parent / Guardian Name
+                    Name des Erziehungsberechtigten
                   </label>
                   <div
                     className={`flex items-center border-2 rounded-xl px-4 py-3 transition-colors ${
@@ -89,7 +90,7 @@ const ApplicationForm = () => {
                     <FaUser className="text-gray-400 mr-3" />
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Max Mustermann"
                       className="bg-transparent w-full outline-none text-primary"
                       onFocus={() => setFocusedField("parent")}
                       onBlur={() => setFocusedField(null)}
@@ -100,7 +101,7 @@ const ApplicationForm = () => {
                 {/* Child Name */}
                 <div className="col-span-2 md:col-span-1">
                   <label className="block text-sm font-bold text-primary mb-2">
-                    Student Name
+                    Name des Kindes
                   </label>
                   <div
                     className={`flex items-center border-2 rounded-xl px-4 py-3 transition-colors ${
@@ -112,7 +113,7 @@ const ApplicationForm = () => {
                     <FaChild className="text-gray-400 mr-3" />
                     <input
                       type="text"
-                      placeholder="Jane Doe"
+                      placeholder="Erika Mustermann"
                       className="bg-transparent w-full outline-none text-primary"
                       onFocus={() => setFocusedField("student")}
                       onBlur={() => setFocusedField(null)}
@@ -123,7 +124,7 @@ const ApplicationForm = () => {
                 {/* Phone */}
                 <div className="col-span-2 md:col-span-1">
                   <label className="block text-sm font-bold text-primary mb-2">
-                    Phone Number
+                    Telefonnummer
                   </label>
                   <div
                     className={`flex items-center border-2 rounded-xl px-4 py-3 transition-colors ${
@@ -146,7 +147,7 @@ const ApplicationForm = () => {
                 {/* Email */}
                 <div className="col-span-2 md:col-span-1">
                   <label className="block text-sm font-bold text-primary mb-2">
-                    Email Address
+                    E-Mail-Adresse
                   </label>
                   <div
                     className={`flex items-center border-2 rounded-xl px-4 py-3 transition-colors ${
@@ -158,7 +159,7 @@ const ApplicationForm = () => {
                     <FaEnvelope className="text-gray-400 mr-3" />
                     <input
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="max@beispiel.de"
                       className="bg-transparent w-full outline-none text-primary"
                       onFocus={() => setFocusedField("email")}
                       onBlur={() => setFocusedField(null)}
@@ -169,7 +170,7 @@ const ApplicationForm = () => {
                 {/* Grade Level (Select) */}
                 <div className="col-span-2">
                   <label className="block text-sm font-bold text-primary mb-2">
-                    Applying for Grade
+                    Klasse
                   </label>
                   <div
                     className={`flex items-center border-2 rounded-xl px-4 py-3 transition-colors ${
@@ -184,11 +185,19 @@ const ApplicationForm = () => {
                       onFocus={() => setFocusedField("grade")}
                       onBlur={() => setFocusedField(null)}
                     >
-                      <option value="">Select a grade...</option>
-                      <option value="1">Grade 1</option>
-                      <option value="2">Grade 2</option>
-                      <option value="3">Grade 3</option>
-                      <option value="4">Grade 4</option>
+                      <option value="">Klasse auswählen...</option>
+                      <option value="1">Klasse 1</option>
+                      <option value="2">Klasse 2</option>
+                      <option value="3">Klasse 3</option>
+                      <option value="4">Klasse 4</option>
+                      <option value="4">Klasse 5</option>
+                      <option value="4">Klasse 6</option>
+                      <option value="4">Klasse 7</option>
+                      <option value="4">Klasse 8</option>
+                      <option value="4">Klasse 9</option>
+                      <option value="4">Klasse 10</option>
+                      <option value="4">Klasse 11</option>
+
                       {/* Add more grades as needed */}
                     </select>
                   </div>
@@ -197,7 +206,7 @@ const ApplicationForm = () => {
                 {/* Additional Comments */}
                 <div className="col-span-2">
                   <label className="block text-sm font-bold text-primary mb-2">
-                    Any Questions?
+                    Haben Sie Fragen?
                   </label>
                   <textarea
                     rows={3}
@@ -206,7 +215,7 @@ const ApplicationForm = () => {
                         ? "border-accent"
                         : "border-gray-100 bg-gray-50"
                     }`}
-                    placeholder="Tell us about your child's interests or ask a question..."
+                    placeholder="Erzählen Sie uns von den Interessen Ihres Kindes oder stellen Sie eine Frage..."
                     onFocus={() => setFocusedField("message")}
                     onBlur={() => setFocusedField(null)}
                   ></textarea>
@@ -216,14 +225,14 @@ const ApplicationForm = () => {
               {/* Submit Button */}
               <button
                 type="button" // Change to submit when connected to backend
-                className="w-full mt-8 bg-accent text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                className="font-accent w-full mt-8 bg-accent text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2"
               >
                 <FaPaperPlane />
-                Submit Application
+                Bewerbung absenden
               </button>
 
-              <p className="text-center text-gray-400 text-xs mt-4">
-                By submitting, you agree to our privacy policy.
+              <p className="font-accent text-center text-gray-400 text-xs mt-4">
+                Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.
               </p>
             </form>
           </motion.div>

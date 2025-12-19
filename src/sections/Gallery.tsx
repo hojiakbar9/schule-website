@@ -84,10 +84,10 @@ const Gallery = () => {
             variants={textVariant}
           >
             <span className="text-accent font-bold tracking-widest text-sm uppercase mb-2 block">
-              Gallery
+              Gallerie
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-primary">
-              Life at the <br className="hidden" /> School
+              Das Leben in der <br className="hidden" /> Schule
             </h2>
           </motion.div>
         </div>

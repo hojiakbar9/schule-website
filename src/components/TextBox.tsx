@@ -1,31 +1,43 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const TextBox = () => {
   return (
-    <div className="text-center max-w-3xl mx-auto mb-16 ">
-      <div className="flex flex-col  font-accent items-center">
-        <p className="text-accent  text-sm uppercase font-bold mb-2 tracking-widest">
-          Unsere Mission
-        </p>
-        <h2 className="text-3xl md:text-5xl font-body font-bold text-primary mb-6">
-          Wo Tradition Innovation trifft
-        </h2>
-        <p className="text-secondary text-lg leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga,
-          cupiditate labore sint dolorem esse hic exercitationem, sequi
-          veritatis libero accusantium recusandae commodi adipisci! Blanditiis
-          temporibus dolor veniam perspiciatis ipsum neque repellat ad
-          explicabo, eius aperiam reiciendis nobis eum animi doloremque sint.
-          Nesciunt, veritatis tempora? Itaque, pariatur! Blanditiis, quos rerum
-          adipisci quibusdam ullam velit quis exercitationem? Soluta incidunt
-          itaque, sequi veniam architecto ipsum quaerat amet necessitatibus
-          ipsam, iusto eaque at voluptatem enim odit velit praesentium officia
-          perspiciatis magnam! Sit earum non atque ipsum vero repellat enim
-          explicabo perferendis temporibus distinctio in est possimus maxime
-          asperiores ex necessitatibus, voluptates magnam facere culpa!
-        </p>
+    <section className=" py-24 bg-white">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div
+          className="text-center max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          {/* Eyebrow / Label */}
+          <span className="text-accent text-sm uppercase font-bold mb-3 block tracking-widest">
+            Unsere Mission
+          </span>
+
+          {/* Main Headline */}
+          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-8 leading-tight">
+            Bildung mit Herz und Verstand
+          </h2>
+
+          {/* Body Text */}
+          <div className="font-accent text-secondary text-lg md:text-xl leading-relaxed space-y-6">
+            <p>
+              Wir glauben daran, dass echte Bildung Wissen und Charakter
+              vereint. In der Marburger Moschee schaffen wir eine Umgebung, in
+              der schulisches Lernen und islamische Werte Hand in Hand gehen.
+            </p>
+            <p>
+              Unser Ziel ist es, selbstbewusste junge Menschen heranzubilden,
+              die ihre Religion kennen, ihre Gemeinschaft schätzen und
+              verantwortungsvoll ihre Zukunft in der Gesellschaft gestalten.
+            </p>
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

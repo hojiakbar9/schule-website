@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 // 1. TypeScript Interfaces
 interface Event {
   id: number;
-  type: "Academic" | "Community" | "Service";
+  type: "Akademisch" | "Gemeinschaft" | "Soziales"; // Updated to German types
   title: string;
   day: string;
   month: string;
@@ -12,45 +12,46 @@ interface Event {
   location: string;
 }
 
-// 2. Sample Data
+// 2. Sample Data (Translated)
 const events: Event[] = [
   {
     id: 1,
-    type: "Academic",
-    title: "Annual Science Fair",
+    type: "Akademisch",
+    title: "Wissenschaftsmesse",
     day: "15",
     month: "NOV",
-    time: "09:00 AM - 02:00 PM",
-    location: "Main Auditorium Hall",
+    time: "09:00 - 14:00 Uhr",
+    location: "Hauptaula",
   },
   {
     id: 2,
-    type: "Community",
-    title: "Fall Harvest Festival",
+    type: "Gemeinschaft",
+    title: "Großes Herbstfest",
     day: "22",
     month: "NOV",
-    time: "03:00 PM - 07:00 PM",
-    location: "School Courtyard",
+    time: "15:00 - 19:00 Uhr",
+    location: "Schulhof",
   },
   {
     id: 3,
-    type: "Service",
-    title: "Charity Food Drive",
+    type: "Soziales",
+    title: "Lebensmittel-Spendenaktion",
     day: "05",
-    month: "DEC",
-    time: "08:30 AM - 12:00 PM",
-    location: "Community Center",
+    month: "DEZ",
+    time: "08:30 - 12:00 Uhr",
+    location: "Gemeindezentrum",
   },
 ];
 
 // Helper: Map types to your Theme Colors
+// Updated cases to match German types
 const getTypeColor = (type: string) => {
   switch (type) {
-    case "Academic":
+    case "Akademisch":
       return "bg-primary"; // #172436
-    case "Community":
+    case "Gemeinschaft":
       return "bg-accent"; // #d19847
-    case "Service":
+    case "Soziales":
       return "bg-secondary"; // #52637a
     default:
       return "bg-primary";
@@ -89,10 +90,10 @@ const UpcomingEvents = () => {
             variants={fadeInUp}
           >
             <span className="text-accent font-bold tracking-widest text-sm uppercase mb-2 block">
-              Calendar
+              Kalender
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-primary">
-              Upcoming Events
+              Kommende Termine
             </h2>
           </motion.div>
         </div>
@@ -138,7 +139,7 @@ const UpcomingEvents = () => {
                 </div>
 
                 {/* Event Details */}
-                <div className="mt-8 pr-12">
+                <div className="font-accent mt-8 pr-12">
                   <h3 className="text-xl font-bold text-primary mb-4 leading-tight group-hover:text-accent transition-colors">
                     {event.title}
                   </h3>
@@ -199,8 +200,8 @@ const UpcomingEvents = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <button className="px-8 py-3 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all duration-300">
-            View Full Calendar
+          <button className="font-accent px-8 py-3 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all duration-300">
+            Gesamten Kalender ansehen
           </button>
         </motion.div>
       </div>

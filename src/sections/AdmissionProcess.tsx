@@ -11,30 +11,30 @@ import {
 const steps = [
   {
     id: 1,
-    title: "Online Application",
+    title: "Online-Anmeldung",
     description:
-      "Complete our comprehensive online application form to provide us with your student details.",
+      "Füllen Sie unser Online-Formular aus, um uns die wichtigsten Daten zu Ihrem Kind zu übermitteln.",
     icon: <FaFileSignature className="w-8 h-8" />,
   },
   {
     id: 2,
-    title: "Screening Call",
+    title: "Kennenlerngespräch",
     description:
-      "Wait for a scheduled call from our admissions team to discuss the student's goals and needs.",
+      "Wir vereinbaren einen Termin, um die Ziele und Bedürfnisse des Schülers persönlich zu besprechen.",
     icon: <FaPhoneVolume className="w-8 h-8" />,
   },
   {
     id: 3,
-    title: "Tuition Payment",
+    title: "Zahlung & Bestätigung",
     description:
-      "Upon acceptance, secure your spot by completing the tuition fee payment process securely.",
+      "Nach der Zusage sichern Sie den Schulplatz durch die Überweisung der Schulgebühren.",
     icon: <FaCreditCard className="w-8 h-8" />,
   },
   {
     id: 4,
-    title: "Final Enrollment",
+    title: "Einschulung",
     description:
-      "Welcome aboard! Receive your enrollment package and join us for the orientation session.",
+      "Willkommen an Bord! Sie erhalten alle Unterlagen und nehmen an der Orientierungsveranstaltung teil.",
     icon: <FaUserGraduate className="w-8 h-8" />,
   },
 ];
@@ -59,7 +59,7 @@ const AdmissionProcess = () => {
   };
 
   return (
-    <section className="py-24 bg-white">
+    <section id="admissions" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -70,10 +70,10 @@ const AdmissionProcess = () => {
             variants={fadeInUp}
           >
             <span className="text-accent font-bold tracking-widest text-sm uppercase mb-2 block">
-              Admissions
+              Anmeldung
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-primary">
-              How to Apply
+              Der Weg zur Aufnahme
             </h2>
           </motion.div>
         </div>
@@ -132,8 +132,8 @@ const AdmissionProcess = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          <button className="px-8 py-3 rounded-full bg-accent text-white font-bold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-            Start Application
+          <button className="font-accent px-8 py-3 rounded-full bg-accent text-white font-bold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <a href="#apply">Anmeldung starten</a>
           </button>
         </motion.div>
       </div>

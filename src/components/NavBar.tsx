@@ -27,8 +27,8 @@ const NavBar = () => {
 
   const menuItems = [
     { name: "Über uns", href: "#about" },
-    { name: "Akademik", href: "#academics" },
-    { name: "Admissions", href: "#admissions" },
+    { name: "Programme", href: "#academics" },
+    { name: "Aufnahme", href: "#admissions" },
     { name: "Leben in der Schule", href: "#life" },
     { name: "Kontakt", href: "#contact" },
   ];

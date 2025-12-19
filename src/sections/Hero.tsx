@@ -86,7 +86,7 @@ const Hero = () => {
             className="font-accent flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="#programs"
+              href="#about"
               className="bg-accent text-white font-bold px-8 py-4 rounded-full text-center transition-all transform hover:scale-105 hover:bg-opacity-90 shadow-lg hover:shadow-xl"
             >
               Mehr erfahren
