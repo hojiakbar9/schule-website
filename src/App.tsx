@@ -9,6 +9,7 @@ import Programs from "./sections/Programs";
 import Gallery from "./sections/Gallery";
 import UpcomingEvents from "./sections/UpcomingEvents";
 import AdmissionProcess from "./sections/AdmissionProcess";
+import Footer from "./sections/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Gallery />
       <UpcomingEvents />
       <AdmissionProcess />
+      <Footer />
     </div>
   );
 }
