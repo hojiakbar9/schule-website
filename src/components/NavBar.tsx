@@ -1,87 +1,108 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // Handle Scroll Effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when screen resizes to DESKTOP (lg breakpoint)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setIsOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const menuItems = [
-    "Über uns",
-    "Akademik",
-    "Admissions",
-    "Leben in der Schule",
-    "Kontakt",
+    { name: "Über uns", href: "#about" },
+    { name: "Akademik", href: "#academics" },
+    { name: "Admissions", href: "#admissions" },
+    { name: "Leben in der Schule", href: "#life" },
+    { name: "Kontakt", href: "#contact" },
   ];
 
   return (
-    <div
-      className={`fixed z-20 w-full pt-4 pb-4 flex items-center justify-between transition-all duration-300 ${
-        isScrolled ? "bg-primary/95 shadow-md" : "bg-transparent"
+    <nav
+      className={`font-accent fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
+        isScrolled ? "bg-primary/95 shadow-md py-4" : "bg-transparent py-6"
       }`}
     >
-      {/* Logo */}
-      <img
-        className="w-[120px] ml-7 mr-8 lg:ml-12 object-contain cursor-pointer"
-        src="src/assets/mm-logo.png"
-        alt="logo"
-      />
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#" className="flex-shrink-0 z-50">
+          <img
+            className="h-12 w-auto object-contain"
+            src="src/assets/mm-logo.png"
+            alt="Marburger Moschee Logo"
+          />
+        </a>
 
-      {/* Desktop Menu - Hidden on mobile */}
-      <nav className="hidden md:flex items-center gap-8 mr-8 lg:mr-12">
-        <ul className="flex items-center gap-6 lg:gap-8">
-          {menuItems.map((item, index) => (
-            <li
-              key={index}
-              className="cursor-pointer transition-colors font-accent font-medium text-white hover:text-secondary"
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
-        <button className="rounded px-6 py-2 font-semibold transition-all bg-accent text-white hover:bg-secondary cursor-pointer">
-          Registrieren
-        </button>
-      </nav>
+        {/* Desktop Menu - visible only on LG screens and up */}
+        <div className="hidden lg:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {menuItems.map((item, index) => (
+              <li key={index}>
+                <a
+                  href={item.href}
+                  className="text-white font-medium hover:text-accent transition-colors text-sm uppercase tracking-wide"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          {/* BUTTON REMOVED FROM HERE */}
+        </div>
 
-      {/* Mobile Burger Menu */}
-      <div className="relative md:hidden">
+        {/* Mobile/Tablet Burger Button - visible on screens smaller than LG */}
         <button
-          className="p-2 text-3xl mr-4 cursor-pointer transition-colors text-white "
+          className="lg:hidden text-3xl text-white focus:outline-none z-50"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
         >
           {isOpen ? <IoClose /> : <CiMenuBurger />}
         </button>
+      </div>
 
-        {/* Mobile Dropdown */}
+      {/* Mobile/Tablet Dropdown Menu */}
+      <AnimatePresence>
         {isOpen && (
-          <div className="bg-primary/95 flex flex-col items-center text-center font-accent absolute text-xl capitalize right-0 mt-5 w-screen  backdrop-blur-md  p-4 shadow-lg">
-            <ul className="space-y-4 text-white mb-4 p-4">
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden absolute top-full left-0 w-full bg-primary/95 border-t border-white/10 backdrop-blur-md overflow-hidden shadow-2xl"
+          >
+            <ul className=" flex flex-col items-center py-8 space-y-6">
               {menuItems.map((item, index) => (
-                <li
-                  key={index}
-                  className="cursor-pointer hover:text-secondary transition-colors"
-                >
-                  {item}
+                <li key={index}>
+                  <a
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-white text-lg font-medium hover:text-accent transition-colors"
+                  >
+                    {item.name}
+                  </a>
                 </li>
               ))}
+              {/* BUTTON REMOVED FROM HERE TOO */}
             </ul>
-            <button className="bg-accent cursor-pointer text-white w-full mt-4 rounded p-2 font-semibold hover:bg-secondary transition-colors">
-              Registrieren
-            </button>
-          </div>
+          </motion.div>
         )}
-      </div>
-    </div>
+      </AnimatePresence>
+    </nav>
   );
 };
 
