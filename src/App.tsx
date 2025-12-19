@@ -6,6 +6,7 @@ import TextBox from "./components/TextBox";
 import About from "./sections/About";
 import Stats from "./sections/Stats";
 import Programs from "./sections/Programs";
+import Gallery from "./sections/Gallery";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <About />
       <Stats />
       <Programs />
+      <Gallery />
     </div>
   );
 }
