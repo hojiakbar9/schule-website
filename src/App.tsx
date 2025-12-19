@@ -7,6 +7,7 @@ import About from "./sections/About";
 import Stats from "./sections/Stats";
 import Programs from "./sections/Programs";
 import Gallery from "./sections/Gallery";
+import UpcomingEvents from "./sections/UpcomingEvents";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Stats />
       <Programs />
       <Gallery />
+      <UpcomingEvents />
     </div>
   );
 }
