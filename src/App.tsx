@@ -8,6 +8,7 @@ import Stats from "./sections/Stats";
 import Programs from "./sections/Programs";
 import Gallery from "./sections/Gallery";
 import UpcomingEvents from "./sections/UpcomingEvents";
+import AdmissionProcess from "./sections/AdmissionProcess";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Programs />
       <Gallery />
       <UpcomingEvents />
+      <AdmissionProcess />
     </div>
   );
 }
