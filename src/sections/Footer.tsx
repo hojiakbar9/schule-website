@@ -1,4 +1,3 @@
-import React from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   FaMapMarkerAlt,
@@ -6,7 +5,6 @@ import {
   FaEnvelope,
   FaFacebookF,
   FaInstagram,
-  FaTwitter,
 } from "react-icons/fa";
 
 const Footer = () => {

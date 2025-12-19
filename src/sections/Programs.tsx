@@ -1,4 +1,3 @@
-import React from "react";
 import ProgramCards from "../components/ProgramCards";
 import { motion, type Variants } from "framer-motion";
 

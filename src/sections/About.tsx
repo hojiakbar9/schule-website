@@ -1,4 +1,3 @@
-import React from "react";
 import TextBox from "../components/TextBox";
 import Card from "../components/Card";
 import { LuBookOpen, LuHeart, LuStar } from "react-icons/lu";
