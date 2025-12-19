@@ -4,6 +4,7 @@ import Links from "./components/Link";
 import NavBar from "./components/NavBar";
 import TextBox from "./components/TextBox";
 import About from "./sections/About";
+import Stats from "./sections/Stats";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <Hero />
       <About />
+      <Stats />
     </div>
   );
 }
