@@ -45,7 +45,7 @@ const activities = [
 
 const BeyondClassroom = () => {
   // Animation Variants
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
