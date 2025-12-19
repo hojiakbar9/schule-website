@@ -1,6 +1,3 @@
-import { section } from "framer-motion/client";
-import React from "react";
-
 const Stats = () => {
   return (
     <section id="stats">
