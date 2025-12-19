@@ -3,7 +3,7 @@ import TextBox from "../components/TextBox";
 import Card from "../components/Card";
 import { LuBookOpen, LuHeart, LuStar } from "react-icons/lu";
 import Citatation from "../components/Citatation";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const About = () => {
   const cardContents = [
@@ -24,7 +24,7 @@ const About = () => {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -32,7 +32,7 @@ const About = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,

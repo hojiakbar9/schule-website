@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
 
 // Define the shape of your image data
 interface GalleryImage {
@@ -56,7 +56,7 @@ const Gallery = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const containerVariant = {
+  const containerVariant: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -64,7 +64,7 @@ const Gallery = () => {
     },
   };
 
-  const cardVariant = {
+  const cardVariant: Variants = {
     hidden: { opacity: 0, x: 50 },
     visible: {
       opacity: 1,

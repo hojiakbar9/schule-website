@@ -2,7 +2,7 @@ import React from "react";
 interface Props {
   title: string;
   text: string;
-  tag: string;
+  tag?: string;
 }
 const ProgramCards = ({ title, text, tag }: Props) => {
   return (

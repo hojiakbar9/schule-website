@@ -1,6 +1,6 @@
 import React from "react";
-import ProgramCards from "../components/ProgramCards"; // Ensure this component accepts title/text props!
-import { motion } from "framer-motion";
+import ProgramCards from "../components/ProgramCards";
+import { motion, type Variants } from "framer-motion";
 
 const Programs = () => {
   // Content Data - clearly defined here for easy editing
@@ -24,7 +24,7 @@ const Programs = () => {
   ];
 
   // Animation Variants
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -33,7 +33,7 @@ const Programs = () => {
     },
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
